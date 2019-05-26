@@ -72,34 +72,6 @@ extension CoreDataManager {
       }
     }
     
-    
-    func deleteEntire() {
-      let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest<NSFetchRequestResult>(entityName: FibTime.description())
-      let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-      do {
-        try CoreDataManager.shared.persistentContainer.viewContext.execute(deleteRequest)
-      } catch let error as NSError {
-        // TODO: handle the error
-        print("deleteEntire Failed. \(error), \(error.userInfo)")
-      }
-    }
-    
-    func deleteData() {
-      let context:NSManagedObjectContext = CoreDataManager.shared.persistentContainer.viewContext
-      let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName:  FibTime.description())
-      fetchRequest.returnsObjectsAsFaults = false
-      
-      do {
-        let results = try context.fetch(fetchRequest)
-        for managedObject in results {
-          let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
-          context.delete(managedObjectData)
-        }
-      } catch let error as NSError {
-        print("Deleted all my data in myEntity error : \(error) \(error.userInfo)")
-      }
-    }
-    
     func flushData() {
       let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest<NSFetchRequestResult>(entityName: FibTime.description())
       let objs = try! CoreDataManager.shared.persistentContainer.viewContext.fetch(fetchRequest)

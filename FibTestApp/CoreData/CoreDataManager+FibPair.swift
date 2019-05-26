@@ -58,48 +58,6 @@ extension CoreDataManager {
       }
     }
     
-    
-    func deleteEntire() {
-      let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: FibPair.description())
-      let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-      do {
-        try CoreDataManager.shared.persistentContainer.viewContext.execute(deleteRequest)
-      } catch let error as NSError {
-        print("deleteEntire Failed. \(error), \(error.userInfo)")
-      }
-    }
-    
-    func deleteData() {
-      let context:NSManagedObjectContext = CoreDataManager.shared.persistentContainer.viewContext
-      let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName:  FibTime.description())
-      fetchRequest.returnsObjectsAsFaults = false
-      
-      do {
-        let results = try context.fetch(fetchRequest)
-        for managedObject in results {
-          let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
-          context.delete(managedObjectData)
-        }
-      } catch let error as NSError {
-        print("Deleted all my data in myEntity error : \(error) \(error.userInfo)")
-      }
-    }
-    
-    func purgeAllData() {
-      let uniqueNames = CoreDataManager.shared.persistentContainer.managedObjectModel.entities.compactMap({ $0.name })
-      
-      uniqueNames.forEach { (name) in
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: name)
-        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        do {
-          try CoreDataManager.shared.persistentContainer.viewContext.execute(batchDeleteRequest)
-        } catch {
-          let nserror = error as NSError
-          fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-        }
-      }
-    }
-    
     func flushData() {
       let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest<NSFetchRequestResult>(entityName: FibPair.description())
       let objs = try! CoreDataManager.shared.persistentContainer.viewContext.fetch(fetchRequest)
