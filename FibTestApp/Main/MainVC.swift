@@ -12,8 +12,10 @@ class MainVC: BaseVC {
   
   //MARK: - Properties
   @IBOutlet weak var bottomViewHeightConstraint: NSLayoutConstraint!
+  @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
   @IBOutlet weak var totalCalculationTimeLabel: UILabel!
   @IBOutlet weak var textField: UITextField!
+  var viewModel = ViewModel()
   private struct Constants {
     static let tabBarHeight_withNotch: CGFloat = 83
     static let tabBarHeight_withOutNotch: CGFloat = 83

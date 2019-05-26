@@ -12,7 +12,7 @@ import CoreData
 extension BaseVC : NSFetchedResultsControllerDelegate {
   
   func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-    tableView.beginUpdates()
+    self.tableView.beginUpdates()
   }
   
   func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
@@ -22,26 +22,26 @@ extension BaseVC : NSFetchedResultsControllerDelegate {
     switch (type) {
     case .insert:
       if let indexPath = newIndexPath {
-        tableView.insertRows(at: [indexPath], with: .fade)
+        self.tableView.insertRows(at: [indexPath], with: .fade)
       }
       break;
     case .delete:
       if let indexPath = indexPath {
-        tableView.deleteRows(at: [indexPath], with: .fade)
+        self.tableView.deleteRows(at: [indexPath], with: .fade)
       }
       break;
     case .update:
-      if let indexPath = indexPath, let cell = tableView.cellForRow(at: indexPath) {
-        configureCell(cell, at: indexPath)
+      if let indexPath = indexPath, let cell = self.tableView.cellForRow(at: indexPath) {
+        self.configureCell(cell, at: indexPath)
       }
       break;
       
     case .move:
       if let indexPath = indexPath {
-        tableView.deleteRows(at: [indexPath], with: .fade)
+        self.tableView.deleteRows(at: [indexPath], with: .fade)
       }
       if let newIndexPath = newIndexPath {
-        tableView.insertRows(at: [newIndexPath], with: .fade)
+        self.tableView.insertRows(at: [newIndexPath], with: .fade)
       }
       break;
       
@@ -51,7 +51,7 @@ extension BaseVC : NSFetchedResultsControllerDelegate {
   }
   
   func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-    tableView.endUpdates()
+    self.tableView.endUpdates()
   }
   
 }

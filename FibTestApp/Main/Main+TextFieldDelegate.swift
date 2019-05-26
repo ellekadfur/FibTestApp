@@ -16,8 +16,8 @@ extension MainVC: UITextFieldDelegate {
   }
   
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    if textField.hasText {
-      //start fib
+    if textField.hasText, let text = textField.text, let intValue = Double(text) {
+      self.viewModel.executeFib(intValue)
       return true
     }
     return false
