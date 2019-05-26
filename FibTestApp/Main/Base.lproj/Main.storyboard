@@ -23,8 +23,15 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtW-Wo-hf1">
-                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="846" width="414" height="50"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="riS-3C-Eei">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="0.5"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="LcG-68-sz0"/>
+                                        </constraints>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dge-1e-K8n">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -34,8 +41,11 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="riS-3C-Eei" secondAttribute="trailing" id="L7J-p8-EFX"/>
                                     <constraint firstItem="dge-1e-K8n" firstAttribute="top" secondItem="dtW-Wo-hf1" secondAttribute="top" id="LrZ-76-z7B"/>
+                                    <constraint firstItem="riS-3C-Eei" firstAttribute="leading" secondItem="dtW-Wo-hf1" secondAttribute="leading" id="Mjk-FM-rQW"/>
                                     <constraint firstAttribute="bottom" secondItem="dge-1e-K8n" secondAttribute="bottom" id="SWG-pf-AKr"/>
+                                    <constraint firstItem="riS-3C-Eei" firstAttribute="top" secondItem="dtW-Wo-hf1" secondAttribute="top" id="TtZ-MR-7Qz"/>
                                     <constraint firstAttribute="height" constant="50" id="YPn-7x-mAt"/>
                                     <constraint firstItem="dge-1e-K8n" firstAttribute="leading" secondItem="dtW-Wo-hf1" secondAttribute="leading" id="haz-M9-KO3"/>
                                     <constraint firstAttribute="trailing" secondItem="dge-1e-K8n" secondAttribute="trailing" id="jNl-4d-8t3"/>
@@ -50,7 +60,7 @@
                             <constraint firstItem="dtW-Wo-hf1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dlV-jK-9lT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dtW-Wo-hf1" secondAttribute="trailing" id="tnB-hh-92h"/>
                             <constraint firstItem="50Q-ID-xMw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="us4-Z2-ECM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dtW-Wo-hf1" secondAttribute="bottom" id="xqj-h2-ziH"/>
+                            <constraint firstAttribute="bottom" secondItem="dtW-Wo-hf1" secondAttribute="bottom" id="xqj-h2-ziH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -61,10 +71,23 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                            <connections>
+                                <outlet property="delegate" destination="BYZ-38-t0r" id="NYJ-Fu-1Dz"/>
+                            </connections>
                         </textField>
-                        <barButtonItem key="rightBarButtonItem" title="Summary" id="kKw-Bz-iwO"/>
+                        <barButtonItem key="rightBarButtonItem" title="Summary" id="kKw-Bz-iwO">
+                            <connections>
+                                <segue destination="UaM-Hz-1iF" kind="show" identifier="SummaryVC" id="E6O-Og-Wvd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bottomViewHeightConstraint" destination="YPn-7x-mAt" id="Umm-7z-PIP"/>
+                        <outlet property="tableView" destination="50Q-ID-xMw" id="Pk0-lo-KQ7"/>
+                        <outlet property="textField" destination="hcB-jF-3iE" id="ard-jx-QSM"/>
+                        <outlet property="totalCalculationTimeLabel" destination="dge-1e-K8n" id="EdI-Nm-txK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -87,6 +110,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ok8-yz-GQS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="229" y="139"/>
+        </scene>
+        <!--SummaryVC-->
+        <scene sceneID="xVm-bd-GhO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Summary" referencedIdentifier="SummaryVC" id="UaM-Hz-1iF" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="csS-5a-ndA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1696" y="81"/>
         </scene>
     </scenes>
 </document>

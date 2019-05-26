@@ -1,6 +1,6 @@
 ## FibTest app in Swift.
 
-This is application demonstrates:
+This application demonstrates:
 1. How to handle potentially large data sets using Core Data
 2. How to architect & design your iOS app modularly so that different components can be reused in other projects.
 
@@ -24,9 +24,10 @@ This is application demonstrates:
 10. Complete unit test
 11. Fix errors/Make improvements 
 
-### Overview of project design & decisions
+### Project design & decisions
+1.  I use a ViewController Extension Centric design by breaking up the ViewController into multiple files and grouping the functionality. This has multiple benefits (I plan to create white paper on this), but the main one is clarity. I do this in my own apps, and have no problem not doing this in your company code. 
+2. I have prefixed the ViewControllers  with VC. It's just my preference; however, this is NOT best practice, it's just my preference due to the project navigator/window size. 
 
-1.  
 
 
 ### Things I would do differently

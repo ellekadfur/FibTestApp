@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SummaryVC.swift
 //  FibTestApp
 //
 //  Created by Lamar Jay Caaddfiir on 5/25/19.
@@ -8,13 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SummaryVC: BaseVC {
 
+  //MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
   }
 
-
 }
-
