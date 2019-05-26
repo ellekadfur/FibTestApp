@@ -18,9 +18,5 @@ public class FibPair: NSManagedObject {
     case value
     case functionValue
   }
-  
-  @nonobjc public class func fetchRequest() -> NSFetchRequest<FibPair> {
-    return NSFetchRequest<FibPair>(entityName: FibPair.description())
-  }
-  
+
 }

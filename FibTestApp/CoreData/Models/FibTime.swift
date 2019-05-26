@@ -21,8 +21,4 @@ public class FibTime: NSManagedObject {
     case order
   }
   
-  @nonobjc public class func fetchRequest() -> NSFetchRequest<FibTime> {
-    return NSFetchRequest<FibTime>(entityName: FibTime.description())
-  }
-  
 }

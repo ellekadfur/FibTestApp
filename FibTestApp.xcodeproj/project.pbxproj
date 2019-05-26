@@ -42,7 +42,6 @@
 		812C0D03229A539500B58EB8 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0D02229A539500B58EB8 /* Utility.swift */; };
 		812C0D05229A53E500B58EB8 /* Main+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0D04229A53E500B58EB8 /* Main+Actions.swift */; };
 		812C0D09229A722200B58EB8 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0D08229A722200B58EB8 /* Device.swift */; };
-		812C0D0B229A756900B58EB8 /* CoreDataManager+BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0D0A229A756900B58EB8 /* CoreDataManager+BaseModel.swift */; };
 		812C0D0E229A7CAB00B58EB8 /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0D0C229A7CAB00B58EB8 /* MainViewModelTests.swift */; };
 		812C0D0F229A7CAB00B58EB8 /* FibTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0D0D229A7CAB00B58EB8 /* FibTimeTests.swift */; };
 /* End PBXBuildFile section */
@@ -105,7 +104,6 @@
 		812C0D02229A539500B58EB8 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		812C0D04229A53E500B58EB8 /* Main+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main+Actions.swift"; sourceTree = "<group>"; };
 		812C0D08229A722200B58EB8 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
-		812C0D0A229A756900B58EB8 /* CoreDataManager+BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+BaseModel.swift"; sourceTree = "<group>"; };
 		812C0D0C229A7CAB00B58EB8 /* MainViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
 		812C0D0D229A7CAB00B58EB8 /* FibTimeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FibTimeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,7 +218,6 @@
 				812C0CF2229A41CA00B58EB8 /* CoreDataManager.swift */,
 				812C0CF4229A44BD00B58EB8 /* CoreDataManager+FibTime.swift */,
 				812C0CF6229A44CF00B58EB8 /* CoreDataManager+FibPair.swift */,
-				812C0D0A229A756900B58EB8 /* CoreDataManager+BaseModel.swift */,
 				812C0CF1229A405F00B58EB8 /* Models */,
 			);
 			path = CoreData;
@@ -446,7 +443,6 @@
 				812C0CEA229A325A00B58EB8 /* Summary+TableView.swift in Sources */,
 				812C0CD8229A23BC00B58EB8 /* BaseVC.swift in Sources */,
 				812C0CF3229A41CA00B58EB8 /* CoreDataManager.swift in Sources */,
-				812C0D0B229A756900B58EB8 /* CoreDataManager+BaseModel.swift in Sources */,
 				812C0CE6229A315400B58EB8 /* Main+Utility.swift in Sources */,
 				812C0CFE229A4C6100B58EB8 /* ACHUD+Animation.swift in Sources */,
 				812C0CE2229A2A8C00B58EB8 /* Main+TextFieldDelegate.swift in Sources */,
