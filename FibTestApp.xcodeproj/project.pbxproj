@@ -32,6 +32,17 @@
 		812C0CE8229A321600B58EB8 /* Summary+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0CE7229A321600B58EB8 /* Summary+Utility.swift */; };
 		812C0CEA229A325A00B58EB8 /* Summary+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0CE9229A325A00B58EB8 /* Summary+TableView.swift */; };
 		812C0CEC229A345700B58EB8 /* Main+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0CEB229A345700B58EB8 /* Main+ViewModel.swift */; };
+		812C0CEE229A3E0600B58EB8 /* FibPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0CED229A3E0600B58EB8 /* FibPair.swift */; };
+		812C0CF0229A3E1A00B58EB8 /* FibTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0CEF229A3E1A00B58EB8 /* FibTime.swift */; };
+		812C0CF3229A41CA00B58EB8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0CF2229A41CA00B58EB8 /* CoreDataManager.swift */; };
+		812C0CF5229A44BD00B58EB8 /* CoreDataManager+FibTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0CF4229A44BD00B58EB8 /* CoreDataManager+FibTime.swift */; };
+		812C0CF7229A44CF00B58EB8 /* CoreDataManager+FibPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0CF6229A44CF00B58EB8 /* CoreDataManager+FibPair.swift */; };
+		812C0CFE229A4C6100B58EB8 /* ACHUD+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0CFA229A4C6100B58EB8 /* ACHUD+Animation.swift */; };
+		812C0CFF229A4C6100B58EB8 /* ACProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 812C0CFB229A4C6100B58EB8 /* ACProgressView.xib */; };
+		812C0D00229A4C6100B58EB8 /* ACProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0CFC229A4C6100B58EB8 /* ACProgressHUD.swift */; };
+		812C0D01229A4C6100B58EB8 /* ACProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0CFD229A4C6100B58EB8 /* ACProgressView.swift */; };
+		812C0D03229A539500B58EB8 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0D02229A539500B58EB8 /* Utility.swift */; };
+		812C0D05229A53E500B58EB8 /* Main+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0D04229A53E500B58EB8 /* Main+Actions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +94,17 @@
 		812C0CE7229A321600B58EB8 /* Summary+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Summary+Utility.swift"; sourceTree = "<group>"; };
 		812C0CE9229A325A00B58EB8 /* Summary+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Summary+TableView.swift"; sourceTree = "<group>"; };
 		812C0CEB229A345700B58EB8 /* Main+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main+ViewModel.swift"; sourceTree = "<group>"; };
+		812C0CED229A3E0600B58EB8 /* FibPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FibPair.swift; sourceTree = "<group>"; };
+		812C0CEF229A3E1A00B58EB8 /* FibTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FibTime.swift; sourceTree = "<group>"; };
+		812C0CF2229A41CA00B58EB8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		812C0CF4229A44BD00B58EB8 /* CoreDataManager+FibTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+FibTime.swift"; sourceTree = "<group>"; };
+		812C0CF6229A44CF00B58EB8 /* CoreDataManager+FibPair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+FibPair.swift"; sourceTree = "<group>"; };
+		812C0CFA229A4C6100B58EB8 /* ACHUD+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ACHUD+Animation.swift"; sourceTree = "<group>"; };
+		812C0CFB229A4C6100B58EB8 /* ACProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ACProgressView.xib; sourceTree = "<group>"; };
+		812C0CFC229A4C6100B58EB8 /* ACProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACProgressHUD.swift; sourceTree = "<group>"; };
+		812C0CFD229A4C6100B58EB8 /* ACProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACProgressView.swift; sourceTree = "<group>"; };
+		812C0D02229A539500B58EB8 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		812C0D04229A53E500B58EB8 /* Main+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main+Actions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +203,7 @@
 				812C0CE5229A315400B58EB8 /* Main+Utility.swift */,
 				812C0CE1229A2A8C00B58EB8 /* Main+TextFieldDelegate.swift */,
 				812C0CEB229A345700B58EB8 /* Main+ViewModel.swift */,
+				812C0D04229A53E500B58EB8 /* Main+Actions.swift */,
 				812C0C90229A07D400B58EB8 /* Main.storyboard */,
 			);
 			path = Main;
@@ -199,6 +222,10 @@
 			isa = PBXGroup;
 			children = (
 				812C0C93229A07D400B58EB8 /* FibTestApp.xcdatamodeld */,
+				812C0CF2229A41CA00B58EB8 /* CoreDataManager.swift */,
+				812C0CF4229A44BD00B58EB8 /* CoreDataManager+FibTime.swift */,
+				812C0CF6229A44CF00B58EB8 /* CoreDataManager+FibPair.swift */,
+				812C0CF1229A405F00B58EB8 /* Models */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -228,8 +255,8 @@
 			children = (
 				812C0CD7229A23BC00B58EB8 /* BaseVC.swift */,
 				812C0CDC229A261300B58EB8 /* Base+TableView.swift */,
-				812C0CD5229A21A900B58EB8 /* Base+FetchResultsDelegate.swift */,
 				812C0CDA229A25DA00B58EB8 /* Base+Utility.swift */,
+				812C0CD5229A21A900B58EB8 /* Base+FetchResultsDelegate.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -238,9 +265,39 @@
 			isa = PBXGroup;
 			children = (
 				812C0CDF229A287A00B58EB8 /* Device.swift */,
+				812C0CF8229A4C4B00B58EB8 /* External */,
 				812C0CC5229A1EB200B58EB8 /* Extensions */,
+				812C0D02229A539500B58EB8 /* Utility.swift */,
 			);
 			path = Misc;
+			sourceTree = "<group>";
+		};
+		812C0CF1229A405F00B58EB8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				812C0CED229A3E0600B58EB8 /* FibPair.swift */,
+				812C0CEF229A3E1A00B58EB8 /* FibTime.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		812C0CF8229A4C4B00B58EB8 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				812C0CF9229A4C6100B58EB8 /* ACProgressView */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		812C0CF9229A4C6100B58EB8 /* ACProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				812C0CFA229A4C6100B58EB8 /* ACHUD+Animation.swift */,
+				812C0CFB229A4C6100B58EB8 /* ACProgressView.xib */,
+				812C0CFC229A4C6100B58EB8 /* ACProgressHUD.swift */,
+				812C0CFD229A4C6100B58EB8 /* ACProgressView.swift */,
+			);
+			path = ACProgressView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +407,7 @@
 				812C0C9A229A07D400B58EB8 /* LaunchScreen.storyboard in Resources */,
 				812C0C97229A07D400B58EB8 /* Assets.xcassets in Resources */,
 				812C0CC4229A1E2A00B58EB8 /* LabelJustifiedCell.xib in Resources */,
+				812C0CFF229A4C6100B58EB8 /* ACProgressView.xib in Resources */,
 				812C0C92229A07D400B58EB8 /* Main.storyboard in Resources */,
 				812C0CCE229A1F8D00B58EB8 /* Summary.storyboard in Resources */,
 			);
@@ -377,19 +435,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				812C0CCC229A1F8000B58EB8 /* SummaryVC.swift in Sources */,
+				812C0CF5229A44BD00B58EB8 /* CoreDataManager+FibTime.swift in Sources */,
 				812C0C95229A07D400B58EB8 /* FibTestApp.xcdatamodeld in Sources */,
+				812C0D01229A4C6100B58EB8 /* ACProgressView.swift in Sources */,
 				812C0CE4229A312100B58EB8 /* Main+TableView.swift in Sources */,
 				812C0C8F229A07D400B58EB8 /* MainVC.swift in Sources */,
 				812C0CE0229A287A00B58EB8 /* Device.swift in Sources */,
 				812C0CDD229A261300B58EB8 /* Base+TableView.swift in Sources */,
 				812C0CC8229A1EFE00B58EB8 /* UIView+Extensions.swift in Sources */,
+				812C0D00229A4C6100B58EB8 /* ACProgressHUD.swift in Sources */,
 				812C0CD6229A21A900B58EB8 /* Base+FetchResultsDelegate.swift in Sources */,
+				812C0CF0229A3E1A00B58EB8 /* FibTime.swift in Sources */,
 				812C0CC3229A1E2A00B58EB8 /* LabelJustifiedCell.swift in Sources */,
+				812C0CF7229A44CF00B58EB8 /* CoreDataManager+FibPair.swift in Sources */,
 				812C0CEA229A325A00B58EB8 /* Summary+TableView.swift in Sources */,
 				812C0CD8229A23BC00B58EB8 /* BaseVC.swift in Sources */,
+				812C0CF3229A41CA00B58EB8 /* CoreDataManager.swift in Sources */,
 				812C0CE6229A315400B58EB8 /* Main+Utility.swift in Sources */,
+				812C0CFE229A4C6100B58EB8 /* ACHUD+Animation.swift in Sources */,
 				812C0CE2229A2A8C00B58EB8 /* Main+TextFieldDelegate.swift in Sources */,
+				812C0D03229A539500B58EB8 /* Utility.swift in Sources */,
 				812C0CDB229A25DA00B58EB8 /* Base+Utility.swift in Sources */,
+				812C0D05229A53E500B58EB8 /* Main+Actions.swift in Sources */,
+				812C0CEE229A3E0600B58EB8 /* FibPair.swift in Sources */,
 				812C0CE8229A321600B58EB8 /* Summary+Utility.swift in Sources */,
 				812C0CEC229A345700B58EB8 /* Main+ViewModel.swift in Sources */,
 				812C0CC9229A1EFE00B58EB8 /* UIViewController+Extensions.swift in Sources */,

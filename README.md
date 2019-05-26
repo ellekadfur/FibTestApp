@@ -25,7 +25,7 @@ This application demonstrates:
 11. Fix errors/Make improvements 
 
 ### Project design & decisions
-1.  I use a ViewController Centric Extension design by breaking up the ViewController into multiple files and grouping the functionality via Extensions e.g. Summary+TableView would hold all the TableView related methods. This has multiple benefits (I plan to create white paper on this), but the main one is clarity. The downside is that you cannot access private properties via extensions so most of the time all of the ViewController's properties must be  internal. I do this in my own apps, and have no problem not doing this in your company code. 
+1.  I use a Class Centric Extension design by breaking up the ViewController into multiple files and grouping the functionality via Extensions e.g. Summary+TableView would hold all the TableView related methods. This has multiple benefits (I plan to create white paper on this), but the main one is clarity. The downside is that you cannot access private properties via extensions so most of the time all of the ViewController's properties must be  internal. I do this in my own apps, and have no problem not doing this in your company code. 
 2. I have prefixed the ViewControllers  with VC. It's just my preference; however, this is NOT best practice, it's just my preference due to the project navigator/window size. 
 3. I decided to use a base class as both ViewControllers share a lot of the functionality.
 

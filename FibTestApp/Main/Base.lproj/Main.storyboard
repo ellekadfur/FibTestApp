@@ -21,6 +21,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="50Q-ID-xMw">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="cU3-Ig-6lb"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="rCk-Oz-L9F"/>
+                                </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtW-Wo-hf1">
                                 <rect key="frame" x="0.0" y="846" width="414" height="50"/>
@@ -78,7 +82,7 @@
                         </textField>
                         <barButtonItem key="rightBarButtonItem" title="Summary" id="kKw-Bz-iwO">
                             <connections>
-                                <segue destination="UaM-Hz-1iF" kind="show" identifier="SummaryVC" id="E6O-Og-Wvd"/>
+                                <action selector="onTouchSummary:" destination="BYZ-38-t0r" id="xLa-km-FB5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -87,6 +91,7 @@
                         <outlet property="tableView" destination="50Q-ID-xMw" id="Pk0-lo-KQ7"/>
                         <outlet property="textField" destination="hcB-jF-3iE" id="ard-jx-QSM"/>
                         <outlet property="totalCalculationTimeLabel" destination="dge-1e-K8n" id="EdI-Nm-txK"/>
+                        <segue destination="UaM-Hz-1iF" kind="show" identifier="SummaryVC" id="bOA-0Z-gmk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

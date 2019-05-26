@@ -26,6 +26,12 @@ class MainVC: BaseVC {
     self.setupBottomView()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    CoreDataManager.shared.fibPair.setup(withVC: self)
+    
+  }
+  
   //MARK: - Setup
   func setupBottomView() {
     if Device.hasTopNotch {

@@ -12,19 +12,15 @@ import UIKit
 extension BaseVC: UITableViewDelegate, UITableViewDataSource  {
   
   //MARK: - UITableViewDataSource
-  func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
-  }
-  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     fatalError("Must Override")
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: LabelJustifiedCell.identifier()) as! LabelJustifiedCell
+    self.configureCell(cell, at:indexPath)
     return cell
   }
-  
   
   //MARK: - UITableViewDelegate
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

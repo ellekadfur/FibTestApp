@@ -13,6 +13,7 @@ class SummaryVC: BaseVC {
   //MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    CoreDataManager.shared.fibPair.setup(withVC: self)
   }
-
+  
 }

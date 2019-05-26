@@ -13,13 +13,9 @@ extension SummaryVC {
   
   //MARK: - UITableViewDataSource
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 0
+    guard let sections = CoreDataManager.shared.fibTime.fetchedResultsController.sections else { return 0 }
+    let sectionInfo = sections[section]
+    return sectionInfo.numberOfObjects
   }
-  
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = super.tableView(tableView, cellForRowAt: indexPath)
-    self.configureCell(cell, at:indexPath)
-    return cell
-  }
-  
+    
 }

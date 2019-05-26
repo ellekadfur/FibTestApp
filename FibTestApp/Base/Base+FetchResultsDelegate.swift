@@ -1,5 +1,5 @@
 //
-//  Main+FetchResultsDelegate.swift
+//  Base+FetchResultsDelegate.swift
 //  FibTestApp
 //
 //  Created by Lamar Jay Caaddfiir on 5/25/19.
@@ -17,7 +17,7 @@ extension BaseVC : NSFetchedResultsControllerDelegate {
   
   func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
     
-    print("B. NSFetchResultController didChange NSFetchedResultsChangeType \(type.rawValue):)")
+//    print("B. NSFetchResultController didChange NSFetchedResultsChangeType \(type.rawValue):)")
     
     switch (type) {
     case .insert:

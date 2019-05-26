@@ -9,20 +9,23 @@
 import UIKit
 
 class BaseVC: UIViewController {
-
+  
   //MARK: - Properties
   @IBOutlet weak var tableView: UITableView!
   
   //MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    CoreDataManager.shared.fibPair.flushData()
+    CoreDataManager.shared.fibTime.flushData()
     self.setupTableView()
   }
   
+
   //MARK: - Setup
   func setupTableView() {
-    self.tableView.register(UINib(nibName: LabelJustifiedCell.identifier(), bundle: nil), forCellReuseIdentifier: LabelJustifiedCell.identifier())
-  self.tableView.tableFooterView = (UIView())
+    self.tableView.register(LabelJustifiedCell.nib(), forCellReuseIdentifier: LabelJustifiedCell.identifier())
+    self.tableView.tableFooterView = (UIView())
   }
   
 }

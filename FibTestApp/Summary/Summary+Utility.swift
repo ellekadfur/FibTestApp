@@ -13,8 +13,9 @@ extension SummaryVC {
   
   //MARK: - Utility
   override func configureCell(_ cell: UITableViewCell, at indexPath: IndexPath) {
-    //    let person = CoreDataManager.sharedManager.fetchedResultsController.object(at: indexPath)
-    //    cell.textLabel?.text =
+    guard let cell = cell as? LabelJustifiedCell else { return }
+    let item = CoreDataManager.shared.fibTime.fetchedResultsController.object(at: indexPath)
+    cell.setup(leftLabelText: item.value, rightLabelText: item.elapsedTime)
   }
   
 }

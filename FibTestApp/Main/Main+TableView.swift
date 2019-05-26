@@ -13,13 +13,14 @@ extension MainVC {
   
   //MARK: - UITableViewDataSource
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 0
-  }
-  
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = super.tableView(tableView, cellForRowAt: indexPath)
-    self.configureCell(cell, at:indexPath)
-    return cell
+    guard let sections = CoreDataManager.shared.fibPair.fetchedResultsController.sections else { return 0 }
+    let sectionInfo = sections[section]
+    return sectionInfo.numberOfObjects
   }
 
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    super.tableView(tableView, didSelectRowAt: indexPath)
+    self.textField.resignFirstResponder()
+  }
+  
 }

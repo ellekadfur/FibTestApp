@@ -8,13 +8,23 @@
 
 import Foundation
 import UIKit
+
 extension MainVC {
+  
   //MARK: - Utility
   override func configureCell(_ cell: UITableViewCell, at indexPath: IndexPath) {
-
-    
-    //    let person = CoreDataManager.sharedManager.fetchedResultsController.object(at: indexPath)
-    //    cell.textLabel?.text =
+    guard let cell = cell as? LabelJustifiedCell else { return }
+      let item = CoreDataManager.shared.fibPair.fetchedResultsController.object(at: indexPath)
+      cell.setup(leftLabelText: item.value, rightLabelText: item.functionValue)
+  }
+  
+  func displayResults(withDoubleValue doubleValue: Double) {
+    ACProgressHUD.shared.showHUD()
+    self.viewModel.executeFib(doubleValue) { [unowned self] calculationTime in
+      self.totalCalculationTimeLabel.text = "Calculation Time \(calculationTime)"
+      ACProgressHUD.shared.hideHUD()
+      self.textField.resignFirstResponder()
+    }
   }
   
 }
