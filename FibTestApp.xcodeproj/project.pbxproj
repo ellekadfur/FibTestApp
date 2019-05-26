@@ -25,7 +25,6 @@
 		812C0CD8229A23BC00B58EB8 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0CD7229A23BC00B58EB8 /* BaseVC.swift */; };
 		812C0CDB229A25DA00B58EB8 /* Base+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0CDA229A25DA00B58EB8 /* Base+Utility.swift */; };
 		812C0CDD229A261300B58EB8 /* Base+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0CDC229A261300B58EB8 /* Base+TableView.swift */; };
-		812C0CE0229A287A00B58EB8 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0CDF229A287A00B58EB8 /* Device.swift */; };
 		812C0CE2229A2A8C00B58EB8 /* Main+TextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0CE1229A2A8C00B58EB8 /* Main+TextFieldDelegate.swift */; };
 		812C0CE4229A312100B58EB8 /* Main+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0CE3229A312100B58EB8 /* Main+TableView.swift */; };
 		812C0CE6229A315400B58EB8 /* Main+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0CE5229A315400B58EB8 /* Main+Utility.swift */; };
@@ -43,6 +42,8 @@
 		812C0D01229A4C6100B58EB8 /* ACProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0CFD229A4C6100B58EB8 /* ACProgressView.swift */; };
 		812C0D03229A539500B58EB8 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0D02229A539500B58EB8 /* Utility.swift */; };
 		812C0D05229A53E500B58EB8 /* Main+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0D04229A53E500B58EB8 /* Main+Actions.swift */; };
+		812C0D09229A722200B58EB8 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0D08229A722200B58EB8 /* Device.swift */; };
+		812C0D0B229A756900B58EB8 /* CoreDataManager+BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812C0D0A229A756900B58EB8 /* CoreDataManager+BaseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +88,6 @@
 		812C0CD7229A23BC00B58EB8 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		812C0CDA229A25DA00B58EB8 /* Base+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Base+Utility.swift"; sourceTree = "<group>"; };
 		812C0CDC229A261300B58EB8 /* Base+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Base+TableView.swift"; sourceTree = "<group>"; };
-		812C0CDF229A287A00B58EB8 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		812C0CE1229A2A8C00B58EB8 /* Main+TextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main+TextFieldDelegate.swift"; sourceTree = "<group>"; };
 		812C0CE3229A312100B58EB8 /* Main+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main+TableView.swift"; sourceTree = "<group>"; };
 		812C0CE5229A315400B58EB8 /* Main+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main+Utility.swift"; sourceTree = "<group>"; };
@@ -105,6 +105,8 @@
 		812C0CFD229A4C6100B58EB8 /* ACProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACProgressView.swift; sourceTree = "<group>"; };
 		812C0D02229A539500B58EB8 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		812C0D04229A53E500B58EB8 /* Main+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main+Actions.swift"; sourceTree = "<group>"; };
+		812C0D08229A722200B58EB8 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		812C0D0A229A756900B58EB8 /* CoreDataManager+BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+BaseModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 				812C0CF2229A41CA00B58EB8 /* CoreDataManager.swift */,
 				812C0CF4229A44BD00B58EB8 /* CoreDataManager+FibTime.swift */,
 				812C0CF6229A44CF00B58EB8 /* CoreDataManager+FibPair.swift */,
+				812C0D0A229A756900B58EB8 /* CoreDataManager+BaseModel.swift */,
 				812C0CF1229A405F00B58EB8 /* Models */,
 			);
 			path = CoreData;
@@ -264,10 +267,10 @@
 		812C0CDE229A286900B58EB8 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				812C0CDF229A287A00B58EB8 /* Device.swift */,
+				812C0D08229A722200B58EB8 /* Device.swift */,
+				812C0D02229A539500B58EB8 /* Utility.swift */,
 				812C0CF8229A4C4B00B58EB8 /* External */,
 				812C0CC5229A1EB200B58EB8 /* Extensions */,
-				812C0D02229A539500B58EB8 /* Utility.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -440,7 +443,6 @@
 				812C0D01229A4C6100B58EB8 /* ACProgressView.swift in Sources */,
 				812C0CE4229A312100B58EB8 /* Main+TableView.swift in Sources */,
 				812C0C8F229A07D400B58EB8 /* MainVC.swift in Sources */,
-				812C0CE0229A287A00B58EB8 /* Device.swift in Sources */,
 				812C0CDD229A261300B58EB8 /* Base+TableView.swift in Sources */,
 				812C0CC8229A1EFE00B58EB8 /* UIView+Extensions.swift in Sources */,
 				812C0D00229A4C6100B58EB8 /* ACProgressHUD.swift in Sources */,
@@ -451,9 +453,11 @@
 				812C0CEA229A325A00B58EB8 /* Summary+TableView.swift in Sources */,
 				812C0CD8229A23BC00B58EB8 /* BaseVC.swift in Sources */,
 				812C0CF3229A41CA00B58EB8 /* CoreDataManager.swift in Sources */,
+				812C0D0B229A756900B58EB8 /* CoreDataManager+BaseModel.swift in Sources */,
 				812C0CE6229A315400B58EB8 /* Main+Utility.swift in Sources */,
 				812C0CFE229A4C6100B58EB8 /* ACHUD+Animation.swift in Sources */,
 				812C0CE2229A2A8C00B58EB8 /* Main+TextFieldDelegate.swift in Sources */,
+				812C0D09229A722200B58EB8 /* Device.swift in Sources */,
 				812C0D03229A539500B58EB8 /* Utility.swift in Sources */,
 				812C0CDB229A25DA00B58EB8 /* Base+Utility.swift in Sources */,
 				812C0D05229A53E500B58EB8 /* Main+Actions.swift in Sources */,

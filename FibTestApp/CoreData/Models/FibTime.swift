@@ -14,9 +14,11 @@ public class FibTime: NSManagedObject {
   
   @NSManaged public var elapsedTime: String
   @NSManaged public var value: String
+  @NSManaged public var order: String
   enum Attribute: String {
     case elapsedTime
     case value
+    case order
   }
   
   @nonobjc public class func fetchRequest() -> NSFetchRequest<FibTime> {

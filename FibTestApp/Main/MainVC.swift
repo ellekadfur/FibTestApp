@@ -12,14 +12,14 @@ class MainVC: BaseVC {
   
   //MARK: - Properties
   @IBOutlet weak var bottomViewHeightConstraint: NSLayoutConstraint!
-  @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
   @IBOutlet weak var totalCalculationTimeLabel: UILabel!
   @IBOutlet weak var textField: UITextField!
   var viewModel = ViewModel()
   private struct Constants {
     static let tabBarHeight_withNotch: CGFloat = 83
-    static let tabBarHeight_withOutNotch: CGFloat = 83
+    static let tabBarHeight_withOutNotch: CGFloat = 49
   }
+  
   //MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -29,7 +29,6 @@ class MainVC: BaseVC {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     CoreDataManager.shared.fibPair.setup(withVC: self)
-    
   }
   
   //MARK: - Setup
@@ -39,7 +38,6 @@ class MainVC: BaseVC {
     } else {
       self.bottomViewHeightConstraint.constant = Constants.tabBarHeight_withOutNotch
     }
-    self.tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.bottomViewHeightConstraint.constant))
   }
   
 }

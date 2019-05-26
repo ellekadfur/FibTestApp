@@ -12,19 +12,21 @@ extension MainVC {
   class ViewModel {
     
     //MARK: - Properties
-    private var completionBlock:((String)->Void)!
-    private var calculationTime: String!
+    private var completionBlock:(()->Void)!
+    private var sessionCounter: Double = 0
     
-    func executeFib(_ n: Double, completion: @escaping ((String)->Void)){
+    //MARK: - Fetch
+    func executeFib(_ n: Double, completion: @escaping (()->Void)) -> String {
       self.completionBlock = completion
       let ms = measure { time in
         self.fib(n, completion: { [unowned self] in
-          self.completionBlock("\(time*1000)ms")//this does not work, also i need to put this on different thread
+          self.completionBlock()
         })
       }
-      self.calculationTime = "\(ms*1000)ms"
+      self.sessionCounter += 1
       print("ms - \(n):\(ms*1000)ms");
-      CoreDataManager.shared.fibTime.insert(value: "\(n)", elapsedTime: "\(ms*1000)ms")
+      CoreDataManager.shared.fibTime.insert(order: self.sessionCounter, value: "\(n)", elapsedTime: "\(ms*1000)ms")
+      return "\(ms*1000)ms"
     }
     
     //MARK: - Private Utility
@@ -32,18 +34,17 @@ extension MainVC {
       var x:Double = -1 ,y:Double = 1, sum:Double = 0;
       for i in stride(from: 0, to: n, by: 1) {
         sum = x+y;
-        x   = y;
-        y   = sum;
+        x = y;
+        y = sum;
         print("pairs - \(i):\(sum)");
-        CoreDataManager.shared.fibPair.insert(value: "\(i)", functionValue: "\(sum)")
+        CoreDataManager.shared.fibPair.insert(value: i+1, functionValue: "\(sum)")
         if i+1 == n {
           completion()
         }
       }
     }
     
-    private func measure(label: String? = nil, tests: Int = 1, printResults output: Bool = true, setup: @escaping () -> Void = { return }, _ block: @escaping (Double) -> Void) -> Double {
-      #warning("warning - change defaults before final commit")
+    private func measure(label: String? = nil, tests: Int = 1, printResults output: Bool = false, setup: @escaping () -> Void = { return }, _ block: @escaping (Double) -> Void) -> Double {
       guard tests > 0 else { fatalError("Number of tests must be greater than 0") }
       var avgExecutionTime : CFAbsoluteTime = 0
       for _ in 1...tests {

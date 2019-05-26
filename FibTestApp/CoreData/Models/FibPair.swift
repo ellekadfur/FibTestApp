@@ -13,7 +13,7 @@ import CoreData
 public class FibPair: NSManagedObject {
   
   @NSManaged public var functionValue: String
-  @NSManaged public var value: String
+  @NSManaged public var value: Double
   enum Attribute: String {
     case value
     case functionValue

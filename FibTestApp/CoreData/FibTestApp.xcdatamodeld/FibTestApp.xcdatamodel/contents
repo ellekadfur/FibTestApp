@@ -2,14 +2,15 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="FibPair" representedClassName="FibPair" syncable="YES">
         <attribute name="functionValue" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <entity name="FibTime" representedClassName="FibTime" syncable="YES">
         <attribute name="elapsedTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="FibPair" positionX="-54" positionY="-9" width="128" height="75"/>
-        <element name="FibTime" positionX="-36" positionY="9" width="128" height="75"/>
+        <element name="FibTime" positionX="-36" positionY="9" width="128" height="90"/>
     </elements>
 </model>

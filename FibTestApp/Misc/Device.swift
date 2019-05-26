@@ -14,7 +14,7 @@ class Device: NSObject {
   static var hasTopNotch: Bool {
     if #available(iOS 11.0,  *) {
       if self.isSimulator() {
-        return false
+        return true
       }
       return UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0 > 20
     }

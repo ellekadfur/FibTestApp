@@ -17,12 +17,10 @@ extension CoreDataManager {
       let appDelegate = UIApplication.shared.delegate as! AppDelegate
       let managedContext = CoreDataManager.shared.persistentContainer.viewContext
       let fetchRequest = NSFetchRequest<FibTime>(entityName: FibTime.description())
-      let sortDescriptor = NSSortDescriptor(key: FibTime.Attribute.value.rawValue, ascending: false)
+      let sortDescriptor = NSSortDescriptor(key: FibTime.Attribute.order.rawValue, ascending: true)
       fetchRequest.sortDescriptors = [sortDescriptor]
-      fetchRequest.fetchLimit = 10
-      fetchRequest.fetchOffset = 10
+      fetchRequest.fetchBatchSize = 15
       let fetchedResultsController = NSFetchedResultsController<FibTime>(fetchRequest: fetchRequest, managedObjectContext: managedContext, sectionNameKeyPath: nil, cacheName: nil)
-      //    fetchedResultsController.delegate = self
       return fetchedResultsController
     }()
     
@@ -35,10 +33,13 @@ extension CoreDataManager {
       }
     }
 
-    func insert(value: String, elapsedTime: String) {
+
+    
+    func insert(order: Double, value: String, elapsedTime: String) {
       let managedContext = CoreDataManager.shared.persistentContainer.viewContext
       let entity = NSEntityDescription.entity(forEntityName: FibTime.description(), in: managedContext)!
       let item = NSManagedObject(entity: entity, insertInto: managedContext)
+      item.setValue(order, forKeyPath: FibTime.Attribute.order.rawValue)
       item.setValue(value, forKeyPath: FibTime.Attribute.value.rawValue)
       item.setValue(elapsedTime, forKeyPath: FibTime.Attribute.elapsedTime.rawValue)
       do {
@@ -70,6 +71,34 @@ extension CoreDataManager {
       } catch let error as NSError {
         print("fetchReady Failed. \(error), \(error.userInfo)")
         return false
+      }
+    }
+    
+    
+    func deleteEntire() {
+      let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest<NSFetchRequestResult>(entityName: FibTime.description())
+      let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+      do {
+        try CoreDataManager.shared.persistentContainer.viewContext.execute(deleteRequest)
+      } catch let error as NSError {
+        // TODO: handle the error
+        print("deleteEntire Failed. \(error), \(error.userInfo)")
+      }
+    }
+    
+    func deleteData() {
+      let context:NSManagedObjectContext = CoreDataManager.shared.persistentContainer.viewContext
+      let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName:  FibTime.description())
+      fetchRequest.returnsObjectsAsFaults = false
+      
+      do {
+        let results = try context.fetch(fetchRequest)
+        for managedObject in results {
+          let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+          context.delete(managedObjectData)
+        }
+      } catch let error as NSError {
+        print("Deleted all my data in myEntity error : \(error) \(error.userInfo)")
       }
     }
     

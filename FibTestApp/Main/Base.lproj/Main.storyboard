@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="50Q-ID-xMw">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="50Q-ID-xMw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="846"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="cU3-Ig-6lb"/>
@@ -58,7 +58,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="50Q-ID-xMw" secondAttribute="bottom" id="T9H-CY-PrE"/>
+                            <constraint firstItem="dtW-Wo-hf1" firstAttribute="top" secondItem="50Q-ID-xMw" secondAttribute="bottom" id="T9H-CY-PrE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="50Q-ID-xMw" secondAttribute="trailing" id="d0s-i4-liP"/>
                             <constraint firstItem="50Q-ID-xMw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dSm-5k-m9g"/>
                             <constraint firstItem="dtW-Wo-hf1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dlV-jK-9lT"/>
@@ -87,7 +87,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="bottomViewHeightConstraint" destination="YPn-7x-mAt" id="Umm-7z-PIP"/>
+                        <outlet property="bottomViewHeightConstraint" destination="YPn-7x-mAt" id="exC-dW-JDX"/>
                         <outlet property="tableView" destination="50Q-ID-xMw" id="Pk0-lo-KQ7"/>
                         <outlet property="textField" destination="hcB-jF-3iE" id="ard-jx-QSM"/>
                         <outlet property="totalCalculationTimeLabel" destination="dge-1e-K8n" id="EdI-Nm-txK"/>
