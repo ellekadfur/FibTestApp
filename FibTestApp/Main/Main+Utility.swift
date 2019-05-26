@@ -23,7 +23,7 @@ extension MainVC {
     self.textField.resignFirstResponder()
     CoreDataManager.shared.fibPair.flushData()
     Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { [unowned self] (_) in
-      let calculationTime = self.viewModel.executeFib(doubleValue) {
+      let calculationTime = self.viewModel.fetchFib(doubleValue) {
         ACProgressHUD.shared.hideHUD()
       }
       self.totalCalculationTimeLabel.text = "Calculation Time \(calculationTime)"

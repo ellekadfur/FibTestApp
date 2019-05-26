@@ -32,8 +32,6 @@ extension CoreDataManager {
         print(error)
       }
     }
-
-
     
     func insert(order: Double, value: String, elapsedTime: String) {
       let managedContext = CoreDataManager.shared.persistentContainer.viewContext

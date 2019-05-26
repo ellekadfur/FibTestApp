@@ -16,7 +16,7 @@ extension MainVC {
     private var sessionCounter: Double = 0
     
     //MARK: - Fetch
-    func executeFib(_ n: Double, completion: @escaping (()->Void)) -> String {
+    func fetchFib(_ n: Double, completion: @escaping (()->Void)) -> String {
       self.completionBlock = completion
       let ms = measure { time in
         self.fib(n, completion: { [unowned self] in
