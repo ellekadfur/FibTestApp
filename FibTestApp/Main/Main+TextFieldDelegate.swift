@@ -12,7 +12,7 @@ import UIKit
 extension MainVC: UITextFieldDelegate {
   
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-    return string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil
+    return (string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil || self.wasBackSpacePressed(string))
   }
   
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {

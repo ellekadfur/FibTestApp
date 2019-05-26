@@ -20,11 +20,23 @@ extension MainVC {
   
   func displayResults(withDoubleValue doubleValue: Double) {
     ACProgressHUD.shared.showHUD()
+    CoreDataManager.shared.fibPair.flushData()
     self.viewModel.executeFib(doubleValue) { [unowned self] calculationTime in
       self.totalCalculationTimeLabel.text = "Calculation Time \(calculationTime)"
       ACProgressHUD.shared.hideHUD()
       self.textField.resignFirstResponder()
     }
+  }
+  
+   func wasBackSpacePressed(_ string: String) -> Bool {
+    if let char = string.cString(using: String.Encoding.utf8) {
+      let isBackSpace = strcmp(char, "\\b")
+      if (isBackSpace == -92) {
+        print("Backspace was pressed")
+        return true
+      }
+    }
+    return false
   }
   
 }

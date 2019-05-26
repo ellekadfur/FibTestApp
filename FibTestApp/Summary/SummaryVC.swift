@@ -11,9 +11,14 @@ import UIKit
 class SummaryVC: BaseVC {
 
   //MARK: - LifeCycle
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    CoreDataManager.shared.fibPair.setup(withVC: self)
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    CoreDataManager.shared.fibTime.setup(withVC: self)
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    self.tableView.reloadData()
   }
   
 }
