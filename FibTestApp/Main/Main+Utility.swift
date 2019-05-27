@@ -14,23 +14,21 @@ extension MainVC {
   //MARK: - Utility
   override func configureCell(_ cell: UITableViewCell, at indexPath: IndexPath) {
     guard let cell = cell as? LabelJustifiedCell else { return }
-      let item = CoreDataManager.shared.fibPair.fetchedResultsController.object(at: indexPath)
-      cell.setup(leftLabelText: "\(item.value)", rightLabelText: item.functionValue)
+    let item = CoreDataManager.shared.fibPair.fetchedResultsController.object(at: indexPath)
+    cell.setup(leftLabelText: "\(item.value)", rightLabelText: item.functionValue)
   }
   
   func displayResults(withDoubleValue doubleValue: Double) {
     ACProgressHUD.shared.showHUD()
     self.textField.resignFirstResponder()
     CoreDataManager.shared.fibPair.flushData()
-    Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { [unowned self] (_) in
-      let calculationTime = self.viewModel.fetchFib(doubleValue) {
-        ACProgressHUD.shared.hideHUD()
-      }
-      self.totalCalculationTimeLabel.text = "Calculation Time \(calculationTime)"
+    let calculationTime = self.viewModel.fetchFib(doubleValue) {
+      ACProgressHUD.shared.hideHUD()
     }
+    self.totalCalculationTimeLabel.text = "Calculation Time \(calculationTime)"
   }
   
-   func wasBackSpacePressed(_ string: String) -> Bool {
+  func wasBackSpacePressed(_ string: String) -> Bool {
     if let char = string.cString(using: String.Encoding.utf8) {
       let isBackSpace = strcmp(char, "\\b")
       if (isBackSpace == -92) {

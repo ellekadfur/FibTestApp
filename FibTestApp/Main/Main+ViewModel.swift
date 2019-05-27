@@ -18,15 +18,24 @@ extension MainVC {
     //MARK: - Fetch
     func fetchFib(_ n: Double, completion: @escaping (()->Void)) -> String {
       self.completionBlock = completion
-      let ms = measure { time in
-        self.fib(n, completion: { [unowned self] in
-          self.completionBlock()
-        })
+      let queue = OperationQueue()
+      let blockOperation = BlockOperation { [unowned self] in
+        let ms = self.measure { time in
+          print("time - \(time)ms");
+          self.fib(n, completion: { [weak self] in
+            guard let strongSelf = self else { print("strongSelf != self"); return }
+            strongSelf.completionBlock()
+          })
+        }
+        OperationQueue.main.addOperation { [unowned self] in
+          self.sessionCounter += 1
+          print("ms - \(n):\(ms*1000)ms");
+          CoreDataManager.shared.fibTime.insert(order: self.sessionCounter, value: "\(n)", elapsedTime: "\(ms*1000)ms")
+        }
       }
-      self.sessionCounter += 1
-      print("ms - \(n):\(ms*1000)ms");
-      CoreDataManager.shared.fibTime.insert(order: self.sessionCounter, value: "\(n)", elapsedTime: "\(ms*1000)ms")
-      return "\(ms*1000)ms"
+      queue.addOperation(blockOperation)
+      
+      return "\(1000)ms"
     }
     
     //MARK: - Private Utility
@@ -37,14 +46,16 @@ extension MainVC {
         x = y;
         y = sum;
         print("pairs - \(i):\(sum)");
-        CoreDataManager.shared.fibPair.insert(value: i+1, functionValue: "\(sum)")
+        OperationQueue.main.addOperation {  
+          CoreDataManager.shared.fibPair.insert(value: i+1, functionValue: "\(sum)")
+        }
         if i+1 == n {
           completion()
         }
       }
     }
     
-    private func measure(label: String? = nil, tests: Int = 1, printResults output: Bool = false, setup: @escaping () -> Void = { return }, _ block: @escaping (Double) -> Void) -> Double {
+    private func measure(label: String? = nil, tests: Int = 1, printResults output: Bool = true, setup: @escaping () -> Void = { return }, _ block: @escaping (Double) -> Void) -> Double {
       guard tests > 0 else { fatalError("Number of tests must be greater than 0") }
       var avgExecutionTime : CFAbsoluteTime = 0
       for _ in 1...tests {
