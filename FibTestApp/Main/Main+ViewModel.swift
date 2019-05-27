@@ -13,29 +13,31 @@ extension MainVC {
     
     //MARK: - Properties
     private var completionBlock:(()->Void)!
+    private var calculationBlock:((String)->Void)!
     private var sessionCounter: Double = 0
+    private var arrayOfValues: [Double] = []
     
     //MARK: - Fetch
-    func fetchFib(_ n: Double, completion: @escaping (()->Void)) -> String {
+    func fetchFib(_ n: Double, calculationBlock: @escaping ((String)->Void), completion: @escaping (()->Void)) {
       self.completionBlock = completion
+      self.calculationBlock = calculationBlock
       let queue = OperationQueue()
       let blockOperation = BlockOperation { [unowned self] in
-        let ms = self.measure { time in
-          print("time - \(time)ms");
+        let ms = self.measure { _ in
           self.fib(n, completion: { [weak self] in
             guard let strongSelf = self else { print("strongSelf != self"); return }
             strongSelf.completionBlock()
           })
         }
-        OperationQueue.main.addOperation { [unowned self] in
-          self.sessionCounter += 1
+        OperationQueue.main.addOperation { [weak self] in
+          guard let strongSelf = self else { print("strongSelf != self"); return }
+          strongSelf.sessionCounter += 1
           print("ms - \(n):\(ms*1000)ms");
-          CoreDataManager.shared.fibTime.insert(order: self.sessionCounter, value: "\(n)", elapsedTime: "\(ms*1000)ms")
+          strongSelf.calculationBlock("\(ms*1000)ms")
+          CoreDataManager.shared.fibTime.insert(order: strongSelf.sessionCounter, value: "\(n)", elapsedTime: "\(ms*1000)ms")
         }
       }
       queue.addOperation(blockOperation)
-      
-      return "\(1000)ms"
     }
     
     //MARK: - Private Utility
@@ -45,9 +47,10 @@ extension MainVC {
         sum = x+y;
         x = y;
         y = sum;
-        print("pairs - \(i):\(sum)");
-        OperationQueue.main.addOperation {  
-          CoreDataManager.shared.fibPair.insert(value: i+1, functionValue: "\(sum)")
+        self.arrayOfValues.append(sum)
+        OperationQueue.main.addOperation { [unowned self] in
+          print("pairs - \(i):\(sum): \(self.arrayOfValues[Int(i)])");
+          CoreDataManager.shared.fibPair.insert(value: i+1, functionValue: "\(self.arrayOfValues[Int(i)])")
         }
         if i+1 == n {
           completion()

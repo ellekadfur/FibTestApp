@@ -22,10 +22,11 @@ extension MainVC {
     ACProgressHUD.shared.showHUD()
     self.textField.resignFirstResponder()
     CoreDataManager.shared.fibPair.flushData()
-    let calculationTime = self.viewModel.fetchFib(doubleValue) {
+  self.viewModel.fetchFib(doubleValue, calculationBlock: { [unowned self] (calculationTime) in
+      self.totalCalculationTimeLabel.text = "Calculation Time \(calculationTime)"
+    }) {
       ACProgressHUD.shared.hideHUD()
     }
-    self.totalCalculationTimeLabel.text = "Calculation Time \(calculationTime)"
   }
   
   func wasBackSpacePressed(_ string: String) -> Bool {
