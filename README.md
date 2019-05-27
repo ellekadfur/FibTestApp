@@ -54,6 +54,7 @@ Provide a button on the right side of the navigation bar and call this Summary, 
 ### Things I would do differently
 
 1.  The FibTimeManager and FibPairManager, share a lot of the same code, I would create an enum with 2 cases, FibTime & FibPair, then create a BaseModelManger, that FibTimeManager and FibPairManager would inherit from then, I would use the enums are arguments to access the correct entity when I want to CRUD (e.g. delete, insert, etc).
+2. Decouple ViewModel & CoreDataManager, I'd return values needed from the ViewModel so it can be an independent module.
 
 
 ### Author
